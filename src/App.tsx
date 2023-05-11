@@ -1,12 +1,13 @@
 import './App.css'
+import MuiDrawerAppBar from "./components/Toobar";
 
 function App() {
 
-  return (
-    <>
-      Vite APP
-    </>
-  )
+    return (
+        <>
+            <MuiDrawerAppBar title={'Ngiri Dashboard'}/>
+        </>
+    )
 }
 
 export default App
