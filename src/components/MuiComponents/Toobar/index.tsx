@@ -16,19 +16,19 @@ interface Props {
 
 export default function MuiDrawerAppBar(props: Props) {
     return (
-        <Box sx={{ display: 'flex' }}>
-            <CssBaseline />
-            <AppBar component="nav">
-                <Toolbar>
-                    <Typography
-                        variant="h6"
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-                    >
-                        {props.title}
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-        </Box>
+            <Box sx={{display: 'flex'}}>
+                <CssBaseline/>
+                <AppBar component="nav">
+                    <Toolbar>
+                        <Typography
+                                variant="h6"
+                                component="div"
+                                sx={{flexGrow: 1, display: {xs: 'none', sm: 'block'}}}
+                        >
+                            {props.title}
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+            </Box>
     );
 }

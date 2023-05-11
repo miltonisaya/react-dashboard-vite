@@ -1,17 +1,12 @@
-
-const TableRow = () :any =>{
+const TableFooter = (): any => {
     return (
-        <tbody>
-        <tr>
-            <td>January</td>
-            <td>$100</td>
-        </tr>
-        <tr>
-            <td>February</td>
-            <td>$80</td>
-        </tr>
-        </tbody>
+            <tfoot>
+            <tr>
+                <td>Sum</td>
+                <td>$180</td>
+            </tr>
+            </tfoot>
     );
 }
 
-export default TableRow;
+export default TableFooter;
