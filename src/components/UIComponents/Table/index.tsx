@@ -31,11 +31,13 @@ function Table<T>({columns, rows, children}: TableProps<T>) {
                 </tr>
                 </thead>
                 <tbody>
-                {rows.map((row, index) => (
+                {rows && rows.length > 0 ? (rows.map((row, index) => (
                         <tr className={index % 2 === 0 ? 'active-row' : ''} key={index}>
                             {columns.map((col, idx) => renderRows(idx, col, row))}
                         </tr>
-                ))}
+                ))) : (
+                        <td colSpan={100}>No data available</td>
+                )}
                 </tbody>
             </table>
     );

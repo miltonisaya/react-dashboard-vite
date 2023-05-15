@@ -1,5 +1,6 @@
 import './App.css'
 import Table from './components/UIComponents/Table'
+import Fetcher, {FetcherResponse} from "./components/UIComponents/Fetcher";
 
 interface Item {
     email: string;
@@ -32,6 +33,27 @@ const columns = [
         value: 'actions',
         name: 'Actions'
     }
+];
+
+const productColumns = [{
+    name: 'Title',
+    value: 'title',
+}, {
+    name: 'Price',
+    value: 'price',
+}, {
+    name: 'Discount %',
+    value: 'discountPercentage',
+}, {
+    name: 'Rating',
+    value: 'rating',
+}, {
+    name: 'Brand',
+    value: 'brand',
+}, {
+    name: 'Category',
+    value: 'category',
+}
 ];
 
 const items: Item[] = [
@@ -74,14 +96,18 @@ function App() {
 
     return (
             <>
-                <Table columns={columns} rows={items}>
-                    {({row, index}: RowProps) => (
-                            <td key={index}>
-                                <button onClick={() => handleEdit(row)}>Edit</button>
-                                <button onClick={() => handleDelete(row)}>Delete</button>
-                            </td>
-                    )}
-                </Table>
+                <Fetcher api={'/products?limit=5'} render={({response, isLoading}: FetcherResponse) => (
+                        isLoading ? (<span>Loading products</span>) : (
+                                <Table columns={productColumns} rows={response.products}>
+                                    {({row, index}: RowProps) => (
+                                            <td key={index}>
+                                                <button onClick={() => handleEdit(row)}>Edit</button>
+                                                <button onClick={() => handleDelete(row)}>Delete</button>
+                                            </td>
+                                    )}
+                                </Table>
+                        )
+                )}/>
             </>
     )
 }
