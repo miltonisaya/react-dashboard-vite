@@ -56,30 +56,6 @@ const productColumns = [{
 }
 ];
 
-const items: Item[] = [
-    {
-        email: 'miltonisaiah@gmail.com',
-        firstname: 'Milton',
-        lastname: 'Kaizer',
-        middlename: 'Isaya',
-        username: 'miltonisaya'
-    },
-    {
-        email: 'zachariahn@gmail.com',
-        firstname: 'Zach',
-        lastname: 'Ngonyani',
-        middlename: 'Mtabe',
-        username: 'zechtz'
-    },
-    {
-        email: 'hibamsi@gmail.com',
-        firstname: 'Haji',
-        lastname: 'Bamsi',
-        middlename: 'Iddi',
-        username: 'hibamsi'
-    }
-];
-
 interface RowProps {
     row: Item;
     index: number;
