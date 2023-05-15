@@ -14,7 +14,7 @@ interface Props {
     window?: () => Window;
 }
 
-export default function MuiDrawerAppBar(props: Props) {
+export default function MuiAppBar(props: Props) {
     return (
             <Box sx={{display: 'flex'}}>
                 <CssBaseline/>
