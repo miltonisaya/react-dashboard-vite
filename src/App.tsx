@@ -1,6 +1,6 @@
 import './App.css'
-import Table from './components/UIComponents/Table'
-import Fetcher, {FetcherResponse} from "./components/UIComponents/Fetcher";
+import Table from './components/UiComponents/Table'
+import Fetcher, {FetcherResponse} from "./components/UiComponents/Fetcher";
 
 interface Item {
     email: string;
