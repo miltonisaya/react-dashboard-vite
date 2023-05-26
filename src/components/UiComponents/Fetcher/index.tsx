@@ -4,7 +4,8 @@ import React from "react";
 
 interface FetcherProps {
     api: string,
-    render: Function
+    render: (response: FetcherResponse) => React.ReactNode;
+
 }
 
 export interface FetcherResponse {
