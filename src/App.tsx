@@ -10,31 +10,6 @@ interface Item {
     username: string
 }
 
-const columns = [
-    {
-        value: 'email',
-        name: 'Email'
-    }, {
-        value: 'firstname',
-        name: 'First Name'
-    },
-    {
-        value: 'middlename',
-        name: 'Middle Name'
-    },
-    {
-        value: 'lastname',
-        name: 'Last Name'
-    },
-    {
-        value: 'username',
-        name: 'Username'
-    }, {
-        value: 'actions',
-        name: 'Actions'
-    }
-];
-
 const productColumns = [{
     name: 'Title',
     value: 'title',
