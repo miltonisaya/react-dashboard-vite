@@ -1,64 +1,20 @@
 import './App.css'
-import Table from './components/UiComponents/Table'
-import Fetcher, {FetcherResponse} from "./components/UiComponents/Fetcher";
+import BasicButton from "./components/UiComponents/BasicButton";
+import BasicTextField from "./components/UiComponents/BasicTextField";
 
-interface Item {
-    email: string;
-    firstname: string;
-    middlename: string;
-    lastname: string;
-    username: string
-}
-
-const productColumns = [{
-    name: 'Title',
-    value: 'title',
-}, {
-    name: 'Price',
-    value: 'price',
-}, {
-    name: 'Discount %',
-    value: 'discountPercentage',
-}, {
-    name: 'Rating',
-    value: 'rating',
-}, {
-    name: 'Brand',
-    value: 'brand',
-}, {
-    name: 'Category',
-    value: 'category',
-}
-];
-
-interface RowProps {
-    row: Item;
-    index: number;
-}
 
 function App() {
-    const handleEdit = (row: Item) => {
-        console.log(row);
+    const handleClick =()=>{
+        console.log("Clicked!!")
     }
 
-    const handleDelete = (row: Item) => {
-        console.log(row);
+    const handleKeyUp = ()=>{
+        console.log("Key up!!")
     }
-
     return (
             <>
-                <Fetcher api={'/products?limit=5'} render={({response, isLoading}: FetcherResponse) => (
-                        isLoading ? (<span>Loading products</span>) : (
-                                <Table columns={productColumns} rows={response.products}>
-                                    {({row, index}: RowProps) => (
-                                            <td key={index}>
-                                                <button onClick={() => handleEdit(row)}>Edit</button>
-                                                <button onClick={() => handleDelete(row)}>Delete</button>
-                                            </td>
-                                    )}
-                                </Table>
-                        )
-                )}/>
+                <BasicTextField id={'name'} label={'name'} onChange={()=>handleKeyUp()}/>
+                <BasicButton variant={'contained'} onClick={()=>handleClick()}>Click Me!</BasicButton>
             </>
     )
 }
